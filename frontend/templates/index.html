@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Task Analyzer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-content">
+      <h1><i class="fas fa-tasks"></i> Smart Task Analyzer</h1>
+      <p class="subtitle">Prioritize tasks intelligently</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main-wrapper">
+      <!-- Input Section -->
+      <div class="input-section">
+        <div class="section-header">
+          <h2><i class="fas fa-list"></i> Input Tasks</h2>
+          <p class="section-desc">Paste your tasks in JSON format</p>
+        </div>
+        
+        <textarea id="taskInput" 
+          placeholder='[{"title":"Example Task","due_date":"2025-12-01","importance":8,"estimated_hours":2}]'
+          class="task-textarea"></textarea>
+
+        <div class="template-hint">
+          <i class="fas fa-info-circle"></i>
+          <small>Format: title, due_date (YYYY-MM-DD), importance (1-10), estimated_hours</small>
+        </div>
+
+        <div class="controls">
+          <div class="strategy-section">
+            <label for="strategy"><i class="fas fa-sliders-h"></i> Strategy:</label>
+            <select id="strategy" class="strategy-select">
+              <option value="default">🎯 Default (Urgency + Importance)</option>
+              <option value="fastest">⚡ Fastest Wins</option>
+              <option value="deadline">📅 Deadline Driven</option>
+            </select>
+          </div>
+
+          <div class="button-group">
+            <button onclick="analyzeTasks()" class="btn btn-primary">
+              <i class="fas fa-magic"></i> Analyze
+            </button>
+            <button onclick="suggestTasks()" class="btn btn-secondary">
+              <i class="fas fa-lightbulb"></i> Suggest Top 3
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-section">
+        <div class="section-header">
+          <h2><i class="fas fa-chart-bar"></i> Results</h2>
+          <p class="section-desc">Your prioritized task list</p>
+        </div>
+        <div id="results" class="results-container">
+          <div class="empty-state">
+            <i class="fas fa-inbox"></i>
+            <p>Click "Analyze" to get started!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Smart Task Analyzer © 2025 | Optimize your productivity</p>
+  </footer>
+
+  <script src="/static/js/scripts.js"></script>
+</body>
+</html>
