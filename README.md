@@ -6,7 +6,7 @@ It analyzes urgency, importance, effort, and dependencies to calculate a priorit
 
 ## 📸 Screenshot
 
-![App Screenshot](./frontend/static/Images/Screenshot 2025-12-04 135141.png)
+![App Screenshot](./frontend/static/Images/page.png)
 ---
 
 ## 🚀 Quick Start (Local)
